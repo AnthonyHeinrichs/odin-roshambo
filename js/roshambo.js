@@ -1,31 +1,63 @@
 window.onload = function() {
+  // This variable stores the amount of wins by the player(user).
+  let userWins = 0
+  // This variable stores the amount of wins by the computer.
+  let computerWins = 0
 
-  let runGame = false;
-  
-  let btn = document.getElementById("newGameButton");
-  btn.addEventListener('click', newGame)
-
-  function newGame() {
-    console.log(runGame)
+  // Function that takes two parameters checks who won the round.
+  // The first parameter is the user's input and the second is the random number that is given by the computer.
+  function checkWinner(user, computer) {
+    if (user === computer) {
+      return console.log('You both guessed the same!')
+    } 
+    if (user === 0) {
+      if (computer == 2) {
+      userWins += 1
+      console.log('wins: ', userWins, computerWins)
+      return console.log('You win!')
+      } else {
+      computerWins += 1
+      console.log('wins: ', userWins, computerWins)
+      return console.log('You lose!')
+      }
+    }
+    if (user === 1) {
+      if (computer == 0) {
+      userWins += 1
+      console.log('wins: ', userWins, computerWins)
+      return console.log('You win!')
+      } else {
+      computerWins += 1
+      console.log('wins: ', userWins, computerWins)
+      return console.log('You lose!')
+      }
+    }
+    if (user === 2) {
+      if (computer == 1) {
+      userWins += 1
+      console.log('wins: ', userWins, computerWins)
+      return console.log('You win!')
+      } else {
+      computerWins += 1
+      console.log('wins: ', userWins, computerWins)
+      return console.log('You lose!')
+      }
+    }
   }
+
+  // This function gets a prompt from the user, at the moment a number between 1-3 then reduces it by 1
+  // Then get a random integer between 0-2 for the computer
+  // Then run the function to check who wins the round
+  function runGame() {
+    let userAnswer = prompt('What will be your tool of choice? 1 - rock, 2 - paper, 3 - scissors') - 1
+    let computerChoice = Math.floor(Math.random() * 3)  
+    checkWinner(userAnswer, computerChoice)
+  }
+
+  const newGameBtn = document.getElementById("newGameButton");
+    newGameBtn.addEventListener('click', newGame)
+
+    function newGame() {
+      runGame()
+    }
 }
-// Ask if user wants to play, if yes, set a boolean runGame to true.
-// Initialize an array of three options (rock, paper or scissors).
-// Prompt the user for some input through an html form, a request to choose between rock, paper or scissors.
-// Store that input into a local variable.
-// Get a random number between 0-2 for the computer, and associate that number to the index of the array.
-// Store the computers chosen index option to a local variable.
-// While there is no game winner (5 wins per match) continue asking user for rock, paper or scissors.
-// Add roshambo logic through a nested if statement in the while loop.
-// If user selection beats computer selection, user wins, else computer wins.
-// If user selection and computer selection are the same, no winner.
-// Initialize two variables to store amount of wins for player and computer.
-// Send user a message to let them know if their chosen tool beats the computers or not.
-// Display amount of wins for player and amount of wins for computer.
-// Continue to run through the while loop until either the user or the computer has 5 wins.
-// If the user has 5 wins, declare that 'they won!'
-// Set runGame to false.
-// If the computer has 5 wins, declare that 'they lost :(' and add a 'new game?' option.
-// Set runGame to false
-// Ask if user wants to play another game.
-// If user selects new game set runGame to true.
