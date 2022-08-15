@@ -1,17 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
 
-body {
+html, body {
   font-family: 'Silkscreen', cursive, Verdana, Geneva, Tahoma, sans-serif;
   background-color: rgb(39, 41, 89);
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: table;
 }
 
 h1 {
-  color: rgb(255, 255, 255);
+  color: #dadfcd;
   font-size: 48px;
+  text-shadow: 4px 4px black;
+  margin-bottom: 0;
+}
+
+h2, p {
+  color: #dadfcd;
+}
+
+footer {
+  color: white;
+  display: table-row;
+  height: 0;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .mainHeader {
-  margin-top: 100px;
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subHeader {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,4 +51,35 @@ h1 {
   justify-content: center;
   align-items: center;
   gap: 100px;
+}
+
+.newGameContainer {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.newGameButton {
+  font-size: 16px;
+  color: rgb(13, 0, 26);
+  background-color: #dadfcd;
+  cursor: pointer;
+  border: 2px solid;
+  padding: 4px 8px;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  touch-action: manipulation;
+}
+
+.newGameButton:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+@media (min-width: 768px) {
+  .newGameButton {
+    padding: 0.25em 0.75em;
+  }
 }
