@@ -1,3 +1,14 @@
+window.onload = function() {
+
+  let runGame = false;
+  
+  let btn = document.getElementById("newGameButton");
+  btn.addEventListener('click', newGame)
+
+  function newGame() {
+    console.log(runGame)
+  }
+}
 // Ask if user wants to play, if yes, set a boolean runGame to true.
 // Initialize an array of three options (rock, paper or scissors).
 // Prompt the user for some input through an html form, a request to choose between rock, paper or scissors.
