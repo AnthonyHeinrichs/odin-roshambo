@@ -4,6 +4,23 @@ window.onload = function() {
   // This variable stores the amount of wins by the computer.
   let computerWins = 0
 
+  const newGameBtn = document.getElementById('newGameButton');
+  newGameBtn.addEventListener('click', console.log('new game'))
+
+  const rockButton = document.getElementById('rockButton')
+  rockButton.addEventListener('click', setChoices.bind( this, 0))
+
+  const paperButton = document.getElementById('paperButton')
+  paperButton.addEventListener('click', setChoices.bind( this, 1))
+  
+  const scissorsButton = document.getElementById('scissorsButton')
+  scissorsButton.addEventListener('click', setChoices.bind( this, 2))
+
+  function setChoices(userChoice) {
+    let computerChoice = Math.floor(Math.random() * 3)
+    checkWinner(userChoice, computerChoice)
+  }
+
   // Function that takes two parameters checks who won the round.
   // The first parameter is the user's input and the second is the random number that is given by the computer.
   function checkWinner(user, computer) {
@@ -48,16 +65,6 @@ window.onload = function() {
   // This function gets a prompt from the user, at the moment a number between 1-3 then reduces it by 1
   // Then get a random integer between 0-2 for the computer
   // Then run the function to check who wins the round
-  function runGame() {
-    let userAnswer = prompt('What will be your tool of choice? 1 - rock, 2 - paper, 3 - scissors') - 1
-    let computerChoice = Math.floor(Math.random() * 3)  
-    checkWinner(userAnswer, computerChoice)
-  }
-
-  const newGameBtn = document.getElementById("newGameButton");
-    newGameBtn.addEventListener('click', newGame)
-
-    function newGame() {
-      runGame()
-    }
+  
+  
 }

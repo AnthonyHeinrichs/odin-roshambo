@@ -60,6 +60,15 @@ footer {
   align-items: center;
 }
 
+.toolButton {
+  all: unset;
+  cursor: pointer;
+}
+
+.toolButton:hover {
+  border: 2px solid;
+}
+
 .newGameButton {
   font-size: 16px;
   color: rgb(13, 0, 26);
