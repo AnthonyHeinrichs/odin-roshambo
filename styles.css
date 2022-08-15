@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
+body {
+  font-family: 'Silkscreen', cursive, Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgb(39, 41, 89);
+}
+
 h1 {
-  color: blue;
+  color: rgb(255, 255, 255);
+  font-size: 48px;
+}
+
+.mainHeader {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
