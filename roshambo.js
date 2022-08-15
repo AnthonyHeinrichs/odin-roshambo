@@ -7,6 +7,7 @@
 // While there is no game winner (5 wins per match) continue asking user for rock, paper or scissors.
 // Add roshambo logic through a nested if statement in the while loop.
 // If user selection beats computer selection, user wins, else computer wins.
+// If user selection and computer selection are the same, no winner.
 // Initialize two variables to store amount of wins for player and computer.
 // Send user a message to let them know if their chosen tool beats the computers or not.
 // Display amount of wins for player and amount of wins for computer.
