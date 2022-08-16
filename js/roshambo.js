@@ -85,11 +85,9 @@ window.onload = function() {
     if (user === 0) {
       if (computer == 2) {
       userWins += 1
-      console.log('wins: ', userWins, computerWins)
       return roundResult.innerHTML = 'Computer chose scissors. You win!'
       } else {
       computerWins += 1
-      console.log('wins: ', userWins, computerWins)
       return roundResult.innerHTML = 'Computer paper. You lose!'
       }
     }
@@ -97,11 +95,9 @@ window.onload = function() {
     if (user === 1) {
       if (computer == 0) {
       userWins += 1
-      console.log('wins: ', userWins, computerWins)
       return roundResult.innerHTML = 'Computer chose rock. You win!'
       } else {
       computerWins += 1
-      console.log('wins: ', userWins, computerWins)
       return roundResult.innerHTML = 'Computer chose scissors. You lose!'
       }
     }
@@ -109,11 +105,9 @@ window.onload = function() {
     if (user === 2) {
       if (computer == 1) {
       userWins += 1
-      console.log('wins: ', userWins, computerWins)
       return roundResult.innerHTML = 'Computer chose paper. You win!'
       } else {
       computerWins += 1
-      console.log('wins: ', userWins, computerWins)
       return roundResult.innerHTML = 'Computer chose rock. You lose!'
       }
     }
