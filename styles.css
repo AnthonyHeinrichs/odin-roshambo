@@ -15,7 +15,7 @@ html {
 
 h1 {
   color: #dadfcd;
-  font-size: 48px;
+  font-size: 64px;
   text-shadow: 4px 4px black;
   margin-bottom: 0;
 }
@@ -23,6 +23,7 @@ h1 {
 h3 {
   margin: 0;
   margin-left: 24px;
+  color: #dadfcd;
 }
 
 h2, p {
@@ -51,10 +52,11 @@ a {
 
 .mainHeader {
   margin-top: 60px;
+  text-align: center;
 }
 
 .optionsMain {
-  gap: 100px;
+  gap: 36px;
 }
 
 .weapon {
@@ -86,12 +88,17 @@ a {
 }
 
 .wins {
-  margin: 0;
-  margin-left: 16px;
   color: #dadfcd;
-  display: flex;
-  justify-content: end;
-  display: table-row;
+}
+
+.userWins {
+  position: absolute;
+  bottom: 100px;
+}
+
+.computerWins {
+  position: absolute;
+  bottom: 76px;
 }
 
 .gameResult {
