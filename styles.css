@@ -55,12 +55,17 @@ a {
   text-align: center;
 }
 
+.subHeader {
+  text-align: center;
+}
+
 .optionsMain {
   gap: 36px;
 }
 
 .weapon {
   margin-top: 80px;
+  text-align: center;
   animation: moveToRight 1s ease-in-out;
   animation-duration: 0.5s;
 }
