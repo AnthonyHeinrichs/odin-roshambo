@@ -4,34 +4,54 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Roshambo for The Odin Project</title>
+  <title>Roshambo</title>
+  <link rel="icon" type="image/x-icon" href="./public/roshambo.png">
   <link rel="stylesheet" href="./styles.css">
   <script type="text/javascript" src="./js/roshambo.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-  <div class="mainHeader">
-    <h1>Rock Paper Scissors</h1>
+  <div id="game" class="toggle-content is-visible">
+    <div class="mainHeader center">
+      <h1>Rock Paper Scissors</h1>
+    </div>
+    <div class="center">
+      <h2>Best-of-seven</h2>
+    </div>
+    <div>
+      <p class="weapon center">Choose a weapon:</p>
+      <div class="optionsMain center">
+        <button id="rockButton" class="toolButton">
+          <img src="./public/rock.png" alt="a rock" width="100" height="100">
+        </button>
+        <button id="paperButton" class="toolButton">
+          <img src="./public/paper.png" alt="a rock" width="100" height="100">
+        </button>
+        <button id="scissorsButton" class="toolButton">
+          <img src="./public/scissors.png" alt="a rock" width="100" height="100">
+        </button>
+      </div>
+    </div>
+    <h3 id="roundResult" class="roundResult center"></h3>
   </div>
-  <div class="subHeader">
-    <h2>Best-of-seven</h2>
+  <h2 id="gameResult" class="gameResult center"></h2>
+  <div class="newGameContainer center">
+    <button id="newGameButton" class="toggle-content newGameButton">NEW GAME</button>
   </div>
-  <div class="optionsMain">
-    <button id="rockButton" class="toolButton">
-      <img src="./public/rock.png" alt="a rock" width="100" height="100">
-    </button>
-    <button id="paperButton" class="toolButton">
-      <img src="./public/paper.png" alt="a rock" width="100" height="100">
-    </button>
-    <button id="scissorsButton" class="toolButton">
-      <img src="./public/scissors.png" alt="a rock" width="100" height="100">
-    </button>
-  </div>
-  <div class="newGameContainer">
-    <button id="newGameButton" class="newGameButton">NEW GAME</button>
+  <div id="wins" class="toggle-content is-visible">
+    <div class="wins">
+      <h3 id="userWins"></h3>
+    </div>
+    <div class="wins">
+      <h3 id="computerWins"></h3>
+    </div>
   </div>
   <footer>
-    <div class="footerContent">
+    <div class="center">
       <p>Copyright © 2022 AnthonyHeinrichs</p>
+      <a href="https://github.com/AnthonyHeinrichs" target="_blank">
+        <i class="icon fa fa-github"></i>
+      </a>
     </div>
   </footer>
 </body>

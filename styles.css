@@ -3,10 +3,14 @@
 html, body {
   font-family: 'Silkscreen', cursive, Verdana, Geneva, Tahoma, sans-serif;
   background-color: rgb(39, 41, 89);
-  height: 100%;
   width: 100%;
   margin: 0;
   display: table;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
 }
 
 h1 {
@@ -16,17 +20,30 @@ h1 {
   margin-bottom: 0;
 }
 
+h3 {
+  margin: 0;
+  margin-left: 24px;
+}
+
 h2, p {
   color: #dadfcd;
 }
 
 footer {
-  color: white;
-  display: table-row;
-  height: 0;
+  color: #dadfcd;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  overflow: hidden;
 }
 
-.footerContent {
+a {
+  color: #dadfcd;
+}
+
+.center {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,30 +51,29 @@ footer {
 
 .mainHeader {
   margin-top: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.subHeader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .optionsMain {
-  margin-top: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 100px;
+}
+
+.weapon {
+  margin-top: 80px;
+  animation: moveToRight 1s ease-in-out;
+  animation-duration: 0.5s;
+}
+
+@keyframes moveToRight {
+  0% {
+      transform: translateX(-200px);
+  }
+  100% {
+      transform: translateX(opx);
+  }
 }
 
 .newGameContainer {
   margin-top: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .toolButton {
@@ -66,7 +82,25 @@ footer {
 }
 
 .toolButton:hover {
-  border: 2px solid;
+  transform: scale(1.1);
+}
+
+.wins {
+  margin: 0;
+  margin-left: 16px;
+  color: #dadfcd;
+  display: flex;
+  justify-content: end;
+  display: table-row;
+}
+
+.gameResult {
+  margin-top:300px;
+}
+
+.roundResult {
+  margin-top: 16px;
+  color:#dadfcd;
 }
 
 .newGameButton {
@@ -85,6 +119,18 @@ footer {
   box-shadow: 0px 0px 0px 0px;
   top: 5px;
   left: 5px;
+}
+
+.toggle-content {
+  display: none;
+}
+
+.toggle-content.is-visible {
+  display: block;
+}
+
+.icon{
+  margin-left: 16px;
 }
 
 @media (min-width: 768px) {

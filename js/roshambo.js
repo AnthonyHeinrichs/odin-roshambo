@@ -6,7 +6,11 @@ window.onload = function() {
 
   // Grabbing all the HTML elements I need to listen to
   const newGameBtn = document.getElementById('newGameButton');
-  newGameBtn.addEventListener('click', console.log('new game'))
+  newGameBtn.addEventListener('click', newGame)
+
+  const game = document.getElementById('game')
+
+  const wins = document.getElementById('wins')
 
   const rockButton = document.getElementById('rockButton')
   rockButton.addEventListener('click', setChoices.bind( this, 0))
@@ -17,16 +21,35 @@ window.onload = function() {
   const scissorsButton = document.getElementById('scissorsButton')
   scissorsButton.addEventListener('click', setChoices.bind( this, 2))
 
+  const roundResult = document.getElementById('roundResult')
+
+  const gameResult = document.getElementById('gameResult');
+
+  const showWinsUser = document.getElementById('userWins')
+  showWinsUser.innerHTML = `Your wins: ${userWins}`
+
+  const showWinsComputer = document.getElementById('computerWins') 
+  showWinsComputer.innerHTML = `Computer wins: ${computerWins}`
+ 
+
+  function newGame() {
+    document.location.reload(true)
+  }
+  
   // Function will check if either the player or computer have 5 wins and return a message
   function checkForFiveWins() {
+    showWinsUser.innerHTML = `Your wins: ${userWins}`
+    showWinsComputer.innerHTML = `Computer wins: ${computerWins}`
     if (userWins === 5) {
-      userWins = 0
-      computerWins = 0
-      return console.log('Congratulations you won!')
+      game.classList.remove('is-visible')
+      wins.classList.remove('is-visible')
+      newGameBtn.classList.add('is-visible')
+      return gameResult.innerHTML = 'You won the game!'
     } else if (computerWins === 5) {
-      userWins = 0
-      computerWins = 0
-      return console.log('Sorry, you lost the game!')
+      game.classList.remove('is-visible')
+      wins.classList.remove('is-visible')
+      newGameBtn.classList.add('is-visible')
+      return gameResult.innerHTML = 'You lost the game :('
     } else {
       return
     }
@@ -44,39 +67,39 @@ window.onload = function() {
   // The first parameter is the user's input and the second is the random number that is given by the computer.
   function checkWinner(user, computer) {
     if (user === computer) {
-      return console.log('You both guessed the same!')
+      return roundResult.innerHTML = 'You both guessed the same!'
     } 
     if (user === 0) {
       if (computer == 2) {
       userWins += 1
       console.log('wins: ', userWins, computerWins)
-      return console.log('Computer chose scissors. You win!')
+      return roundResult.innerHTML = 'Computer chose scissors. You win!'
       } else {
       computerWins += 1
       console.log('wins: ', userWins, computerWins)
-      return console.log('Computer paper. You lose!')
+      return roundResult.innerHTML = 'Computer paper. You lose!'
       }
     }
     if (user === 1) {
       if (computer == 0) {
       userWins += 1
       console.log('wins: ', userWins, computerWins)
-      return console.log('Computer chose rock. You win!')
+      return roundResult.innerHTML = 'Computer chose rock. You win!'
       } else {
       computerWins += 1
       console.log('wins: ', userWins, computerWins)
-      return console.log('Computer chose scissors. You lose!')
+      return roundResult.innerHTML = 'Computer chose scissors. You lose!'
       }
     }
     if (user === 2) {
       if (computer == 1) {
       userWins += 1
       console.log('wins: ', userWins, computerWins)
-      return console.log('Computer chose paper. You win!')
+      return roundResult.innerHTML = 'Computer chose paper. You win!'
       } else {
       computerWins += 1
       console.log('wins: ', userWins, computerWins)
-      return console.log('Computer chose rock. You lose!')
+      return roundResult.innerHTML = 'Computer chose rock. You lose!'
       }
     }
   }
