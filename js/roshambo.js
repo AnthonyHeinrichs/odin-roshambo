@@ -30,10 +30,10 @@ window.onload = function() {
 
   // Setting wins to show on page refresh
   const showWinsUser = document.getElementById('userWins')
-  showWinsUser.innerHTML = `Your wins: ${userWins}`
+  showWinsUser.innerText = `Your wins: ${userWins}`
 
   const showWinsComputer = document.getElementById('computerWins') 
-  showWinsComputer.innerHTML = `Computer wins: ${computerWins}`
+  showWinsComputer.innerText = `Computer wins: ${computerWins}`
  
   // Reloads page if user selects the new game button
   function newGame() {
@@ -45,18 +45,18 @@ window.onload = function() {
   it will then show the new game button
   */
   function checkForFiveWins() {
-    showWinsUser.innerHTML = `Your wins: ${userWins}`
-    showWinsComputer.innerHTML = `Computer wins: ${computerWins}`
+    showWinsUser.innerText = `Your wins: ${userWins}`
+    showWinsComputer.innerText = `Computer wins: ${computerWins}`
     if (userWins === 5) {
       game.classList.remove('is-visible')
       wins.classList.remove('is-visible')
       newGameBtn.classList.add('is-visible')
-      return gameResult.innerHTML = 'You won the game!'
+      return gameResult.innerText = 'You won the game!'
     } else if (computerWins === 5) {
       game.classList.remove('is-visible')
       wins.classList.remove('is-visible')
       newGameBtn.classList.add('is-visible')
-      return gameResult.innerHTML = 'You lost the game :('
+      return gameResult.innerText = 'You lost the game :('
     } else {
       return
     }
@@ -79,36 +79,36 @@ window.onload = function() {
   function checkWinner(user, computer) {
     // First the function checks if both the player(user) and computer selected the same weapon
     if (user === computer) {
-      return roundResult.innerHTML = 'You both guessed the same!'
+      return roundResult.innerText = 'You both guessed the same!'
     }
     // When user selects rock, it will check if computer chose scissors or paper and return the result. 
     if (user === 0) {
       if (computer == 2) {
       userWins += 1
-      return roundResult.innerHTML = 'Computer chose scissors. You win!'
+      return roundResult.innerText = 'Computer chose scissors. You win!'
       } else {
       computerWins += 1
-      return roundResult.innerHTML = 'Computer paper. You lose!'
+      return roundResult.innerText = 'Computer paper. You lose!'
       }
     }
     // When user selects paper, it will check if computer chose rock or scissors and return the result.
     if (user === 1) {
       if (computer == 0) {
       userWins += 1
-      return roundResult.innerHTML = 'Computer chose rock. You win!'
+      return roundResult.innerText = 'Computer chose rock. You win!'
       } else {
       computerWins += 1
-      return roundResult.innerHTML = 'Computer chose scissors. You lose!'
+      return roundResult.innerText = 'Computer chose scissors. You lose!'
       }
     }
     // When user selects scissors, it will check if computer chose paper or rock and return the result.
     if (user === 2) {
       if (computer == 1) {
       userWins += 1
-      return roundResult.innerHTML = 'Computer chose paper. You win!'
+      return roundResult.innerText = 'Computer chose paper. You win!'
       } else {
       computerWins += 1
-      return roundResult.innerHTML = 'Computer chose rock. You lose!'
+      return roundResult.innerText = 'Computer chose rock. You lose!'
       }
     }
   }
